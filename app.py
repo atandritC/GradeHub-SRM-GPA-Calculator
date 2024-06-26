@@ -59,5 +59,5 @@ if st.button('Calculate GPA'):
 
 # Footer
 st.markdown('---')
-st.markdown('Source Code: [GradeHub on GitHub](https://github.com/atandritC)')
+st.markdown('Source Code: [GradeHub on GitHub](https://github.com/atandritC/GradeHub-SRM-GPA-Calculator)')
 st.markdown('© 2024, Atandrit Chatterjee.')
