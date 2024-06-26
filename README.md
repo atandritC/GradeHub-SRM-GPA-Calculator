@@ -30,8 +30,8 @@ Ensure you have Python 3.x installed on your machine. You can download it from [
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/GradeHub.git
-cd GradeHub
+git clone https://github.com/yourusername/GradeHub-SRM-GPA-Calculator.git
+cd GradeHub-SRM-GPA-Calculator
 ```
 
 ### Install Dependencies
