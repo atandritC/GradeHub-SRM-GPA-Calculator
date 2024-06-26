@@ -2,7 +2,7 @@
 
 ## Calculate Your SRM University GPA
 
-Welcome to GradeHub, a simple GPA calculator tailored for SRM University students. This tool helps you compute your Cumulative Grade Point Average (CGPA) based on your course credits and grades.
+Welcome to GradeHub, a simple GPA calculator tailored for SRM University students. This tool helps you compute your Grade Point Average (GPA) based on your course credits and grades.
 
 ## What GradeHub Does
 
