@@ -7,7 +7,7 @@ Welcome to GradeHub, a simple GPA calculator tailored for SRM University student
 ## What GradeHub Does
 
 - Allows you to input your course credits and grades.
-- Computes your CGPA instantly upon submission.
+- Computes your GPA instantly upon submission.
 - Provides a user-friendly interface for quick GPA estimation.
 
 ## Demonstration
