@@ -12,7 +12,7 @@ Welcome to GradeHub, a simple GPA calculator tailored for SRM University student
 
 ## Demonstration
 
-![GradeHub Demo](https://github.com/yourusername/Demo-GIFs-Pictures/blob/main/GradeHub.gif)
+![GradeHub Demo](https://github.com/atandritC/Project-Demos/blob/main/GradeHub.gif)
 
 ## Installation and Usage Instructions (For End-Users)
 
