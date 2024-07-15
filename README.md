@@ -17,7 +17,7 @@ Welcome to GradeHub, a simple GPA calculator tailored for SRM University student
 ## Installation and Usage Instructions (For End-Users)
 
 To use the GradeHub application, visit the following Streamlit site where it is hosted:
-[GradeHub on Streamlit](https://gradeapp.streamlit.app/)
+[GradeHub on Streamlit](https://srm-gpa-calculator.streamlit.app/)
 
 ## Installation and Usage Instructions (For Developers)
 
