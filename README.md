@@ -1,69 +1,102 @@
-# GradeHub - SRM GPA Calculator
+# GradeHub
 
-## Calculate Your SRM University GPA
+**SRM University GPA Calculator**  
+A Streamlit-powered web app that helps SRM University students instantly compute their Grade Point Average — featuring credit-based grade input, real-time GPA calculation, and a clean, intuitive interface designed specifically for SRM's grading system.
 
-Welcome to GradeHub, a simple GPA calculator tailored for SRM University students. This tool helps you compute your Grade Point Average (GPA) based on your course credits and grades.
+[![Python](https://img.shields.io/badge/Python-3.8+-3776AB.svg?logo=python&logoColor=white)](https://www.python.org)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.x-FF4B4B.svg?logo=streamlit&logoColor=white)](https://streamlit.io)
+[![SRM University](https://img.shields.io/badge/SRM-University-0066CC.svg?logo=googlechrome&logoColor=white)](https://www.srmist.edu.in)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-## What GradeHub Does
+## 🛠 Tech Stack
 
-- Allows you to input your course credits and grades.
-- Computes your GPA instantly upon submission.
-- Provides a user-friendly interface for quick GPA estimation.
+**Backend & Logic**
+- Python 3.8+ — Clean, readable scripts for GPA computation and validation
+- Streamlit — Reactive UI framework for instant form handling and result rendering
 
-## Demonstration
+**Frontend & UX**
+- Streamlit native components — Text inputs, number sliders, and dynamic result cards
+- Responsive layout — Works seamlessly on desktop and mobile browsers
+- Zero custom CSS — Leverages Streamlit's theming for a polished, accessible interface
+
+**Data & Validation**
+- SRM-specific grading scale — Hardcoded grade-to-point mapping (S=10, A=9, B=8, etc.)
+- Input sanitization — Validates credit values (positive integers) and grade codes before calculation
+- Formula: `GPA = Σ(GradePoint × Credits) / Σ(Credits)` implemented with floating-point precision
+
+## ✨ Key Features
+
+- **SRM-Optimized Grading** — Pre-configured with SRM University's official grade-to-point conversion table
+- **Instant Calculation** — GPA updates in real-time as you add or modify courses
+- **Dynamic Course Entries** — Add/remove courses on the fly with credit and grade fields
+- **Clear Result Display** — Shows computed GPA with two-decimal precision and total credits summary
+- **Zero Setup for Users** — Hosted live on Streamlit Cloud; no installation required
+- **Local Development Ready** — Simple `pip install` and `streamlit run` workflow for contributors
+- **Lightweight & Fast** — Pure Python logic; no external APIs or database dependencies
+
+## 📸 Demo
 
 ![GradeHub Demo](https://github.com/atandritC/Project-Demos/blob/main/GradeHub.gif)
 
-## Installation and Usage Instructions (For End-Users)
+## 🏗 Architecture
 
-To use the GradeHub application, visit the following Streamlit site where it is hosted:
-[GradeHub on Streamlit](https://srm-gpa-calculator.streamlit.app/)
+- **Single-File Simplicity** — All logic and UI contained in `app.py` for easy maintenance and deployment
+- **Reactive Computation** — Streamlit's auto-rerun triggers GPA recalculation on any input change
+- **Grade Mapping Dictionary** — Centralized `GRADE_POINTS` dict ensures consistent SRM grading logic
+- **Input Validation Layer** — Checks for empty fields, invalid grade codes, and non-positive credits before computing
+- **Stateless Design** — No session persistence required; each calculation is independent and privacy-friendly
 
-## Installation and Usage Instructions (For Developers)
+## ⚙️ How to Run Locally
 
-If you want to run GradeHub locally or contribute to its development, follow these steps:
-
-### Prerequisites
-
-Ensure you have Python 3.x installed on your machine. You can download it from [python.org](https://www.python.org/downloads/).
-
-### Clone the Repository
+No Docker, no database, no complex setup — just Python and Streamlit.
 
 ```bash
-git clone https://github.com/yourusername/GradeHub-SRM-GPA-Calculator.git
+# Clone the repository
+git clone https://github.com/atandritC/GradeHub-SRM-GPA-Calculator.git
 cd GradeHub-SRM-GPA-Calculator
-```
 
-### Install Dependencies
-
-Install the necessary Python packages using the `requirements.txt` file:
-
-```bash
+# Install dependencies
 pip install -r requirements.txt
-```
 
-### Run the Application
-
-Start the Streamlit application:
-
-```bash
+# Launch the Streamlit app
 streamlit run app.py
 ```
 
-### File Descriptions
+The app will open automatically in your browser. Start adding your courses, credits, and grades to see your GPA update instantly.
 
-- `app.py`: Main script for running the Streamlit web application.
-- `requirements.txt`: List of Python dependencies required for the project.
+> 🌐 **Use Online**: No setup needed — visit the live app at [srm-gpa-calculator.streamlit.app](https://srm-gpa-calculator.streamlit.app/)
 
-## Contributor Expectations
+## 🧠 Challenges Faced & Solutions
 
-If you would like to contribute to GradeHub, please follow these guidelines:
+| Challenge | Solution |
+|---|---|
+| SRM uses non-standard grade codes (S, A+, B-, etc.) not found in generic calculators | Created a hardcoded `GRADE_POINTS` dictionary matching SRM's official academic handbook |
+| Users might enter invalid grades or negative credits | Added input validation with clear error messages using Streamlit's `st.error()` and conditional rendering |
+| GPA formula must handle dynamic number of courses | Used Python list comprehensions and `zip()` to compute weighted sums regardless of course count |
+| Streamlit reruns entire script on every input change | Leveraged this behavior intentionally — no manual "calculate" button needed; results update reactively |
+| Floating-point precision could show long decimals | Applied `round(gpa, 2)` for clean two-decimal output matching university transcript format |
 
-1. **Fork the repository** and create your feature branch (`git checkout -b feature/AmazingFeature`).
-2. **Commit your changes** (`git commit -m 'Add some AmazingFeature'`).
-3. **Push to the branch** (`git push origin feature/AmazingFeature`).
-4. **Open a pull request**.
+## 📈 What I Learned
 
-Before contributing, ensure your code aligns with the existing style and includes relevant tests if applicable. Contributions that improve the application's functionality, performance, or usability are highly appreciated.
+- Building domain-specific tools by encoding institutional rules (like SRM's grading scale) into simple logic
+- Designing reactive forms in Streamlit that feel instant and intuitive without manual submission
+- Validating user input gracefully to prevent calculation errors while maintaining a friendly UX
+- Deploying Python web apps to Streamlit Cloud with zero-config CI/CD
+- Keeping projects minimal and focused — solving one problem well rather than over-engineering
 
-Thank you for using GradeHub to calculate your GPA effortlessly! Happy studying!
+## 🤝 Contributing
+
+Contributions are welcome! To get started:
+
+1. Fork the repo and create your feature branch:  
+   `git checkout -b feature/AmazingFeature`
+2. Commit your changes:  
+   `git commit -am 'Add some AmazingFeature'`
+3. Push to the branch:  
+   `git push origin feature/AmazingFeature`
+4. Open a Pull Request with a clear description of your changes
+
+**Guidelines**:
+- Follow PEP 8 style and include docstrings for new functions
+- Test GPA calculations with edge cases (0 credits, all S grades, mixed inputs)
+- Preserve SRM-specific grading logic unless updating based on official policy changes
